@@ -12,7 +12,7 @@ class PostListPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
 
 
-class ListViewSet(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     lookup_field = "title"
