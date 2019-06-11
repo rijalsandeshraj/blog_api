@@ -2,7 +2,6 @@ from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 from rest_framework import filters
-from django.shortcuts import get_object_or_404
 
 from .models import Post
 from .serializers import PostSerializer

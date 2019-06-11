@@ -39,18 +39,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'rest_framework',
-    'corsheaders',
+    # 'corsheaders',
 ]
 
+
+# REST FRAMEWORK
+
 REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+    ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     )
 }
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:3000/'
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:3000/'
+# )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
